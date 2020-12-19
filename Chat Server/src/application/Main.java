@@ -10,8 +10,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 
 
@@ -20,6 +27,7 @@ public class Main extends Application {
 	public static ExecutorService threadPool;
 	public static Vector<Client> clients = new Vector<Client>();
 	
+
 	ServerSocket serverSocket;
 	
 	//서버를 구동시켜서 클라이언트의 연결을 기다리는 메소드입니다.
@@ -89,10 +97,28 @@ public class Main extends Application {
 		}
 	}
 	
-	//UI를 생성하고, 실질적으로 프로그램을 동작시키는 메소드입니다.
+	//UI를 생성하고, 실질적으로 프로그램을 동작시키는 메소드
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception {
 		
+		
+//		FXMLLoader loader = new FXMLLoader();
+//
+//	    loader.setLocation(Main.class.getResource("server.fxml"));
+//	    Parent root = loader.load();
+		
+//		Button toggleButton = (Button) root.lookup("toggleButton");
+//		TextArea textArea = (TextArea) root.lookup("textArea");
+		
+//		Button toggleButton = new Button("시작하기");
+//		((BorderPane) root).setBottom(toggleButton);
+//		
+		Parent root = FXMLLoader.load(Main.class.getResource("server.fxml"));
+		Scene scene = new Scene(root);
+		primaryStage.setTitle("[ 채팅 서버 ]");
+		primaryStage.setOnCloseRequest(event -> stopServer());
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
 	//프로그램의 진입점.

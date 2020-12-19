@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerServer">
+   <top>
+      <Label alignment="CENTER" prefHeight="89.0" prefWidth="600.0" text="채팅프로그램 서버" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="나눔고딕" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <ToggleButton fx:id="toggleButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="147.0" text="시작하기" BorderPane.alignment="TOP_CENTER">
+         <font>
+            <Font name="나눔고딕" size="20.0" />
+         </font>
+      </ToggleButton>
+   </bottom>
+   <center>
+      <TextArea fx:id="textArea" editable="false" prefHeight="548.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      	<font>
+            <Font name="나눔고딕" size="15.0" />
+         </font>
+      </TextArea>
+   </center>
+</BorderPane>
