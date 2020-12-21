@@ -26,7 +26,7 @@ public class Main extends Application {
 	
 	public static ExecutorService threadPool;
 	public static Vector<Client> clients = new Vector<Client>();
-	
+	//벡터 라이브러리
 
 	ServerSocket serverSocket;
 	
@@ -36,7 +36,7 @@ public class Main extends Application {
 		try {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress(IP, port));
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			if(!serverSocket.isClosed()) {
 				stopServer();
@@ -55,13 +55,11 @@ public class Main extends Application {
 						socket = serverSocket.accept();
 						clients.add(new Client(socket));
 						System.out.println("[클라이언트 접속]"
-								+ socket.getRemoteSocketAddress()
-								+": "
-								+ Thread.currentThread().getName());
-						
-					} catch (IOException e) {
-						e.printStackTrace();
-						
+										+ socket.getRemoteSocketAddress()
+										+": "
+										+ Thread.currentThread().getName()
+										);
+					} catch (Exception e) {
 						if(!serverSocket.isClosed()) {
 							stopServer();
 						}
@@ -70,10 +68,10 @@ public class Main extends Application {
 				}
 			}
 		};
-		
 		threadPool = Executors.newCachedThreadPool();
 		threadPool.submit(thread);
 	}
+	
 	//서버의 작동을 중지시키는 메소드
 	public void stopServer() {
 		try {

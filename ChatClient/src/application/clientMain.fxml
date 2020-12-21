@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.ControllerClient">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="400.0">
+         <top>
+            <AnchorPane prefHeight="70.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="176.0" layoutY="28.0" text="카카오톡" textAlignment="CENTER" />
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="sendButton" disable="true" layoutX="346.0" layoutY="426.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="40.0" text="전송" />
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="6.0" prefHeight="42.0" prefWidth="380.0">
+                     <children>
+                        <TextField fx:id="userName" promptText="닉네임을 입력하세요" />
+                        <TextField fx:id="IPText" promptText="IP" />
+                        <TextField fx:id="portText" promptText="port" />
+                     </children>
+                  </HBox>
+                  <TextArea fx:id="textArea" editable="false" layoutX="13.0" layoutY="46.0" prefHeight="373.0" prefWidth="377.0" />
+                  <TextField fx:id="input" disable="true" layoutX="13.0" layoutY="427.0" prefHeight="32.0" prefWidth="325.0" />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="connectionButton" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="접속" />
+                  <Button layoutX="82.0" layoutY="12.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
