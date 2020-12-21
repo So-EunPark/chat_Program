@@ -1,45 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<StackPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.ControllerClient">
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerClient">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="400.0">
+      <BorderPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #acbfd0;">
          <top>
-            <AnchorPane prefHeight="70.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="49.0" prefWidth="400.0" style="-fx-background-color: #aabdce;" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" layoutX="176.0" layoutY="28.0" text="카카오톡" textAlignment="CENTER" />
+                  <Label alignment="CENTER" layoutX="164.0" layoutY="15.0" text="카카우톡" textAlignment="CENTER">
+                     <font>
+                        <Font name="나눔고딕" size="18.0" />
+                     </font></Label>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="332.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../bin/media/search.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="360.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../bin/media/plus.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../bin/media/left-arrow.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="521.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="sendButton" disable="true" layoutX="346.0" layoutY="426.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="40.0" text="전송" />
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="6.0" prefHeight="42.0" prefWidth="380.0">
+                  <HBox alignment="CENTER_RIGHT" layoutX="13.0" prefHeight="42.0" prefWidth="374.0">
                      <children>
-                        <TextField fx:id="userName" promptText="닉네임을 입력하세요" />
-                        <TextField fx:id="IPText" promptText="IP" />
-                        <TextField fx:id="portText" promptText="port" />
+                        <TextField fx:id="userName" prefHeight="30.0" prefWidth="137.0" promptText="닉네임을 입력하세요">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="나눔고딕" size="12.0" />
+                           </font></TextField>
+                        <Button fx:id="connectionButton" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="39.0" style="-fx-background-color: #fae100;" text="접속">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="나눔고딕" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="IPText" prefHeight="30.0" prefWidth="105.0" promptText="IP">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="나눔고딕" size="12.0" />
+                           </font></TextField>
+                        <TextField fx:id="portText" prefHeight="30.0" prefWidth="63.0" promptText="port">
+                           <font>
+                              <Font name="나눔고딕" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin></TextField>
                      </children>
                   </HBox>
-                  <TextArea fx:id="textArea" editable="false" layoutX="13.0" layoutY="46.0" prefHeight="373.0" prefWidth="377.0" />
-                  <TextField fx:id="input" disable="true" layoutX="13.0" layoutY="427.0" prefHeight="32.0" prefWidth="325.0" />
+                  <TextArea fx:id="textArea" editable="false" layoutX="12.0" layoutY="42.0" prefHeight="454.0" prefWidth="377.0" style="-fx-background-radius: 5; -fx-font-size: 13;">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="나눔고딕" size="12.0" />
+                     </font>
+                     </TextArea>
+                  <TextField fx:id="input" disable="true" layoutX="12.0" layoutY="503.0" prefHeight="32.0" prefWidth="329.0">
+                     <font>
+                        <Font name="나눔고딕" size="12.0" />
+                     </font></TextField>
+                  <Button fx:id="sendButton" disable="true" layoutX="349.0" layoutY="503.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="40.0" style="-fx-background-color: #fae100;" text="전송">
+                     <font>
+                        <Font name="나눔고딕" size="12.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
          </center>
-         <bottom>
-            <AnchorPane prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Button fx:id="connectionButton" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" text="접속" />
-                  <Button layoutX="82.0" layoutY="12.0" mnemonicParsing="false" text="Button" />
-               </children>
-            </AnchorPane>
-         </bottom>
       </BorderPane>
    </children>
 </StackPane>

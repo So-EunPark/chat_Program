@@ -1,15 +1,12 @@
 package application;
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -49,29 +46,23 @@ public class ControllerClient implements Initializable{
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				Main.startClient(IPText.getText(), port);
-				Platform.runLater(()->{
-//					textArea.appendText("[ "+ userName.getText() +"님이 채팅방에 접속했습니다 ]\n");
-					Main.send("[ "+ userName.getText() +"님이 채팅방에 접속했습니다 ]\n");
-					System.out.println("[ "+ userName.getText() +"님이 채팅방에 접속했습니다 ]\n");
-				});
+				Main.startClient(IPText.getText(), port, userName.getText());
 				connectionButton.setText("종료");
 				input.setDisable(false);
 				sendButton.setDisable(false);
 				input.requestFocus();
-				
 			}else {
-				Main.stopClient();
 				Platform.runLater(()->{
-					textArea.appendText("[ 채팅방 퇴장 ]\n");
+//					Main.send("[ "+ userName.getText() +"님이 퇴장했습니다 ]\n");
+					textArea.clear();
 				});
+				Main.stopClient();
+				
 				connectionButton.setText("접속");
 				input.setDisable(true);
 				sendButton.setDisable(true);
 			}
 		});
-		
-		
 	}
 
 //	public void appendMessage(String message) {

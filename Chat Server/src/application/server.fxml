@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerServer">
-   <top>
-      <Label alignment="CENTER" prefHeight="89.0" prefWidth="600.0" text="채팅프로그램 서버" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="나눔고딕" size="20.0" />
-         </font>
-      </Label>
-   </top>
-   <bottom>
-      <ToggleButton fx:id="toggleButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" text="시작하기" BorderPane.alignment="TOP_CENTER">
-         <font>
-            <Font name="나눔고딕" size="15.0" />
-         </font>
-      </ToggleButton>
-   </bottom>
-   <center>
-      <TextArea fx:id="textArea" editable="false" prefHeight="443.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-      	<font>
-            <Font name="나눔고딕" size="15.0" />
-         </font>
-      </TextArea>
-   </center>
-</BorderPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerServer">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #acbfd0;">
+         <bottom>
+            <ToggleButton fx:id="toggleButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #fae100;" text="시작하기" BorderPane.alignment="TOP_CENTER">
+               <font>
+                  <Font name="나눔고딕" size="15.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
+               </BorderPane.margin>
+            </ToggleButton>
+         </bottom>
+         <center>
+            <TextArea fx:id="textArea" editable="false" prefHeight="449.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="나눔고딕" size="15.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </BorderPane.margin>
+            </TextArea>
+         </center>
+         <top>
+            <Label alignment="CENTER" prefHeight="68.0" prefWidth="400.0" text="Kakau Talk - server" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="나눔고딕" size="20.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

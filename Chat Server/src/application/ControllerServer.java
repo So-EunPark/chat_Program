@@ -27,14 +27,14 @@ public class ControllerServer implements Initializable{
 			if(toggleButton.getText().equals("시작하기")) {
 				main.startServer(IP,port);				
 				Platform.runLater(()-> {
-				String message = String.format("[서버 시작]\n", IP, port);
+				String message = "[서버가 시작되었습니다] IP: " + IP + "/ port: " + port + "\n";
 					textArea.appendText(message);
 					toggleButton.setText("종료하기");
 				});
 			}else {
 				main.stopServer();
 				Platform.runLater(()->{
-					String message = String.format("[서버 종료]\n",IP,port);
+					String message = "[서버가 종료되었습니다] IP: " + IP + "/ port: " + port + "\n";
 					textArea.appendText(message);
 					toggleButton.setText("시작하기");
 					});

@@ -111,11 +111,11 @@ public class Main extends Application {
 //		Button toggleButton = new Button("시작하기");
 //		((BorderPane) root).setBottom(toggleButton);
 //		
-		Parent root = FXMLLoader.load(Main.class.getResource("server.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("server.fxml"));
 		Scene scene = new Scene(root);
-		primaryStage.setTitle("[ 채팅 서버 ]");
-		primaryStage.setOnCloseRequest(event -> stopServer());
+		primaryStage.setTitle("채팅 서버 / Chat Server");
 		primaryStage.setScene(scene);
+		primaryStage.setOnCloseRequest(event -> stopServer());
 		primaryStage.show();
 	}
 	
