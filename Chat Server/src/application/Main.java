@@ -32,7 +32,6 @@ public class Main extends Application {
 	
 	//서버를 구동시켜서 클라이언트의 연결을 기다리는 메소드입니다.
 	public void startServer(String IP, int port) {
-		
 		try {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress(IP, port));
@@ -43,14 +42,12 @@ public class Main extends Application {
 			}
 			return;
 		}
-		
 		//클라이언트가 접속할 때까지 계속 기다리는 쓰레드입니다.
 		Runnable thread = new Runnable() {
 			@Override
 			public void run() {
 				while(true) {
 					try {
-						
 						Socket socket;
 						socket = serverSocket.accept();
 						clients.add(new Client(socket));

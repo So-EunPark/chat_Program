@@ -32,12 +32,14 @@ public class ControllerClient implements Initializable{
 			input.requestFocus();
 		});
 		
+		//전송버튼 클릭시 보내기
 		sendButton.setOnAction( event -> {
 			Main.send(userName.getText() + ": " + input.getText() + "\n");
 			input.setText("");
 			input.requestFocus();
 		});
 		
+		//접속 버튼 클릭시 이벤트 처리
 		connectionButton.setOnAction(event ->{
 			if(connectionButton.getText().equals("접속")) {
 				int port = 9876;

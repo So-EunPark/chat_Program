@@ -25,8 +25,6 @@ public class Client {
 						InputStream in = socket.getInputStream();
 						byte[] buffer = new byte[512];
 						int length = in.read(buffer);
-//						System.out.println(in.read(buffer));
-						
 						//메세지 송신 오류라면 오류처리
 						if(length == -1) throw new IOException();
 						System.out.println("[서버 : 메시지 수신 성공]"
